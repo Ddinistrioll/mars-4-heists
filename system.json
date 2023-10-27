@@ -1,0 +1,34 @@
+{
+  "id": "mars-4-heists",
+  "title": "Mars 4 : Heists",
+  "description": "The M4H system for FoundryVTT!",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.313",
+    "maximum": 11
+  },
+  "authors": [{
+    "name": "PierreDVX"
+  }],
+  "esmodules": ["module/mars-4-heists.mjs"],
+  "styles": ["css/mars-4-heists.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "sq",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "stamina",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}

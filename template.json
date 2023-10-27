@@ -1,0 +1,176 @@
+{
+  "Actor": {
+    "types": ["character", "npc", "bug", "sensor", "mine", "turret"],
+    "templates": {
+      "base": {
+        "health": {
+          "current": 0,
+          "min": 0
+        },
+        "description": ""
+      },
+      "alive": {
+        "stamina": {
+          "value": 0,
+          "min": 0
+        },
+        "credits": {
+          "value": 100,
+          "min": 0
+        }
+      },
+      "detectable": {
+        "heat": {
+          "value": 50,
+          "min": 0,
+          "max": 100,
+          "base": 50
+        }
+      },
+      "activatable": {
+        "senses": ["vision"]
+      }
+    },
+    "character": {
+      "templates": ["base", "alive", "detectable"],
+      "shares": {
+        "possessed":{
+          "value": 100,
+          "min": 0,
+          "max": 100
+        }
+      },
+      "reputation": {
+        "value": 0,
+        "min": -100,
+        "max": 100
+      }
+    },
+    "npc": {
+      "templates": ["base", "alive", "detectable"]
+    },
+    "bug": {
+      "templates": ["base"],
+      "speed": {
+        "value": 0,
+        "min": 0
+      },
+      "instruction": ""
+    },
+    "sensor": {
+      "templates": ["base", "detectable", "activatable"],
+      "range": {
+        "value": 0,
+        "min": 0
+      }
+    },
+    "mine": {
+      "templates": ["base", "detectable", "activatable"],
+      "range": {
+        "value": 0,
+        "min": 0
+      },
+      "trigger": "",
+      "effect": {
+        "damage": {
+          "value": 0,
+          "min": 0
+        },
+        "description": ""
+      }
+    },
+    "turret": {
+      "templates": ["base", "detectable", "activatable"],
+      "quickness": {
+        "value": 50,
+        "min": 0,
+        "max": 95
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "weapon", "armor", "consumable", "implant", "perk", "action"],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+      "items": {
+        "price": {
+          "value": 0,
+          "min": 0
+        }
+      }
+    },
+    "item": {
+      "templates": ["base", "items"]
+    },
+    "weapon": {
+      "templates": ["base", "items"],
+      "projectiles": {
+        "value": 1,
+        "min": 1
+      },
+      "damage": {
+        "value": 4,
+        "min": 1
+      },
+      "type": "handgun",
+      "specialization": "",
+      "range": "medium",
+      "hands": {
+        "usage": {
+          "type": "number",
+          "value": 1,
+          "min": 0,
+          "max": 2
+        },
+        "current": {
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 2
+        }
+      }
+    },
+    "armor": {
+      "templates": ["base", "items"],
+      "armor": {
+        "value": 0,
+        "min": 0
+      },
+      "type": "body",
+      "equiped": false
+    },
+    "consumable": {
+      "templates": ["base", "items"],
+      "quantity": {
+        "value": 1,
+        "min": 0
+      }
+    },
+    "implant": {
+      "templates": ["base", "items"],
+      "type": "heart",
+      "power": {
+        "value": 1
+      },
+      "active": true
+    },
+    "perk": {
+      "templates": ["base"],
+      "tier": {
+        "value": 1,
+        "min": 1,
+        "max": 4
+      },
+      "stat": "insight"
+    },
+    "action": {
+      "templates": ["base"],
+      "cost": {
+        "value": 1,
+        "min" : 0
+      }
+    }
+  }
+}
