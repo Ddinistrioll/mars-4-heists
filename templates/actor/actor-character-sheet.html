@@ -21,7 +21,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.stamina.current" class="resource-label">toughness</label>
+          <label for="system.stamina.current" class="resource-label">Toughness</label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="number" name="system.stamina.current" value="{{system.stamina.current}}" data-dtype="Number"/>
           </div>
@@ -46,27 +46,31 @@
     {{!-- Owned Features Tab --}}
     <div class="tab stats" data-group="primary" data-tab="stats">
       <section class="grid grid-3col">
-        <aside class="sidebar">
 
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
             {{#each system.mainStats as |stat key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.mainStats.{{key}}.total" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.total" data-label="{{key}}">{{key}}</label>
+            <h3>{{key}}</h3>
+            <table>
+              <tr>
+                <th>Base</th>
+                <th>Mods</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <td>{{stat.base}}</td>
+                <td>{{stat.mods}}</td>
+                <td>{{stat.total}}</td>
+              </tr>
+            </table>
+            <!-- <div class="ability grid grid-3col">
+              <label for="system.mainStats.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.base" data-label="{{key}}">{{key}} base</label>
+              <label for="system.mainStats.{{key}}.mods" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.mods" data-label="{{key}}">{{key}} mods</label>
+              <label for="system.mainStats.{{key}}.total" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.total" data-label="{{key}}">{{key}} total</label>
               {{stat.base}}, {{stat.mods}}, {{this.total}}
-            </div>
+            </div> -->
             {{/each}}
-          </div>
-        </aside>
-
-        {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/mars-4-heists/templates/actor/parts/actor-features.html"}}
-        </section>
-
       </section>
     </div>
 
