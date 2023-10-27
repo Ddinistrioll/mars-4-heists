@@ -51,6 +51,7 @@
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
             {{#each system.mainStats as |stat key|}}
+            <div>
             <h3>{{key}}</h3>
             <table>
               <tr>
@@ -64,6 +65,7 @@
                 <td>{{stat.total}}</td>
               </tr>
             </table>
+          </div>
             <!-- <div class="ability grid grid-3col">
               <label for="system.mainStats.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.base" data-label="{{key}}">{{key}} base</label>
               <label for="system.mainStats.{{key}}.mods" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.mods" data-label="{{key}}">{{key}} mods</label>
