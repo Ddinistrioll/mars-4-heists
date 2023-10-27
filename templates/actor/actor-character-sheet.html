@@ -16,14 +16,14 @@
         <div class="resource flex-group-center">
           <label for="system.health.current" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.health.current" value="{{system.health.current}}" min="0" data-dtype="Number"/>
+          <input type="number" name="system.health.current" value="{{system.health.current}}" data-dtype="Number"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="system.stamina.current" class="resource-label">toughness</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.stamina.current" value="{{system.stamina.current}}" min="0" max="{{system.stamina.max}}" data-dtype="Number"/>
+          <input type="number" name="system.stamina.current" value="{{system.stamina.current}}" data-dtype="Number"/>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="stats">Stats</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
@@ -44,7 +44,7 @@
   <section class="sheet-body">
 
     {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
+    <div class="tab stats" data-group="primary" data-tab="stats">
       <section class="grid grid-3col">
         <aside class="sidebar">
 
@@ -52,11 +52,10 @@
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
+            {{#each system.mainStats as |stat key|}}
             <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+              <label for="system.mainStats.{{key}}.total" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.total" data-label="{{key}}">{{key}}</label>
+              {{system.mainStats.{{key}}.base}}, {{system.mainStats.{{key}}.mods}}, {{system.mainStats.{{key}}.total}}
             </div>
             {{/each}}
           </div>

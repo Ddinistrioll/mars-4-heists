@@ -2,7 +2,7 @@
   "id": "mars-4-heists",
   "title": "Mars 4 : Heists",
   "description": "The M4H system for FoundryVTT!",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "compatibility": {
     "minimum": 11,
     "verified": "11.313",
@@ -28,7 +28,7 @@
   "secondaryTokenAttribute": "stamina",
   "url": "https://github.com/Ddinistrioll/mars-4-heists",
   "manifest": "https://raw.githubusercontent.com/Ddinistrioll/mars-4-heists/main/system.json",
-  "download": "https://github.com/Ddinistrioll/mars-4-heists/archive/refs/tags/0.1.4.zip",
+  "download": "https://github.com/Ddinistrioll/mars-4-heists/archive/refs/heads/main.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"
 }
