@@ -26,9 +26,9 @@
   "gridUnits": "sq",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "stamina",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/Ddinistrioll/mars-4-heists/blob/main/",
+  "manifest": "https://github.com/Ddinistrioll/mars-4-heists/blob/main/system.json",
+  "download": "https://github.com/Ddinistrioll/mars-4-heists/archive/refs/heads/main.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"
 }
