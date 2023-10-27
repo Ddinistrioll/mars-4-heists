@@ -45,6 +45,7 @@
 
     {{!-- Owned Features Tab --}}
     <div class="tab stats" data-group="primary" data-tab="stats">
+      <h1 style="text-align: center;">MAIN STATS</h1>
       <section class="grid grid-3col">
 
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
@@ -52,7 +53,7 @@
           from 1 to 12 and will create that number of columns.  --}}
             {{#each system.mainStats as |stat key|}}
             <div style="text-align: center;">
-            <h2>{{key}}</h2>
+            <h2>{{stat.label}}</h2>
             <table>
               <tr>
                 <th>Base</th>

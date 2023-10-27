@@ -54,7 +54,7 @@ export class M4HActor extends Actor {
     const systemData = actorData.system;
 
     // MAIN STATS
-    const mainStats = {insight:{tier:0}, mastery:{tier:0}, resolve:{tier:0}, toughness:{tier:0}, quickness:{tier:0}, finesse:{tier:0}};
+    const mainStats = {insight:{tier:0, label:"Insight"}, mastery:{tier:0, label:"Mastery"}, resolve:{tier:0, label:"Resolve"}, toughness:{tier:0, label:"Toughness"}, quickness:{tier:0, label:"Quickness"}, finesse:{tier:0, label:"Finesse"}};
     for (let [key, item] of actorData.items.entries())
     {
       if (item.type == 'perk')
