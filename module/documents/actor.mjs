@@ -60,7 +60,7 @@ export class M4HActor extends Actor {
       if (item.type == 'perk')
       {
         mainStats[item.system.stat].tier = mainStats[item.system.stat].tier >= item.system.tier.value ? mainStats[item.system.stat].tier : item.system.tier.value;
-      } 
+      }
     }
     for (let [key, stat] of Object.entries(mainStats))
     {
@@ -77,7 +77,7 @@ export class M4HActor extends Actor {
     systemData.stamina.regen = Math.floor((systemData.mainStats.toughness.total + systemData.mainStats.finesse.total) / 10 - 5);
 
     systemData.initiative = {value: Math.floor((systemData.mainStats.quickness.total + systemData.mainStats.insight.total) / 2)};
-    
+
     systemData.defense = {value: Math.floor((systemData.mainStats.quickness.total + systemData.mainStats.mastery.total) / 2 - 10)};
 
     systemData.speed = {value: Math.floor((systemData.mainStats.quickness.total + systemData.mainStats.finesse.total) / 15)};
@@ -108,7 +108,7 @@ export class M4HActor extends Actor {
       if (item.type == 'perk')
       {
         i++;
-      } 
+      }
     }
     systemData.tier = Math.floor(i/5) + 1;
 
@@ -118,11 +118,11 @@ export class M4HActor extends Actor {
       if (item.type !== 'perk' && item.type !== 'action')
       {
         shareValue += Math.floor(item.system.price.value / (item.type == 'implant' ? 2 : 4))
-      } 
+      }
     }
-    systemData.shares.value = Math.floor(shareValue * (systemData.tier / 2) * (systemData.reputation.value / 50 + 1));
+    systemData.shares.value = Math.floor(shareValue * (systemData.tier / 2) * (Math.abs(systemData.reputation.value > 0 ? systemData.reputation.value : systemData.reputation.value / 2) / 50 + 1));
 
-    console.log(systemData); 
+    console.log(systemData);
 
     // // Loop through ability scores, and add their modifiers to our sheet output.
     // for (let [key, ability] of Object.entries(systemData.abilities)) {
@@ -147,7 +147,7 @@ export class M4HActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
+
   }
 
   _prepareSensorData(actorData) {
@@ -155,7 +155,7 @@ export class M4HActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
+
   }
 
   _prepareMineData(actorData) {
@@ -163,7 +163,7 @@ export class M4HActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
+
   }
 
   _prepareTurretData(actorData) {
@@ -171,7 +171,7 @@ export class M4HActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
+
   }
 
   /**
