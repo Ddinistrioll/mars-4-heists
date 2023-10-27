@@ -125,7 +125,7 @@ export class M4HActor extends Actor {
     // DATA VERIFICATION
     if (systemData.health.current > systemData.health.max)
     {
-      systemData.health.current =- systemData.health.max;
+      systemData.health.current = systemData.health.max;
     }
 
     console.log(systemData);
