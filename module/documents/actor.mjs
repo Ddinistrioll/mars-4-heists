@@ -122,6 +122,12 @@ export class M4HActor extends Actor {
     }
     systemData.shares.value = Math.floor(shareValue * (systemData.tier / 2) * (Math.abs(systemData.reputation.value > 0 ? systemData.reputation.value : systemData.reputation.value / 2) / 50 + 1));
 
+    // DATA VERIFICATION
+    if (systemData.health.current > systemData.health.max)
+    {
+      systemData.health.current =- systemData.health.max;
+    }
+
     console.log(systemData);
 
     // // Loop through ability scores, and add their modifiers to our sheet output.
