@@ -123,12 +123,12 @@ export class M4HActor extends Actor {
     systemData.shares.value = Math.floor(shareValue * (systemData.tier / 2) * (Math.abs(systemData.reputation.value > 0 ? systemData.reputation.value : systemData.reputation.value / 2) / 50 + 1));
 
     // DATA VERIFICATION
-    if (systemData.health.current > systemData.health.max || systemData.health.current < systemData.health.min)
+    if (systemData.health.current == null || systemData.health.current > systemData.health.max || systemData.health.current < systemData.health.min)
     {
       systemData.health.current = systemData.health.current > systemData.health.max ? systemData.health.max : systemData.health.min;
     }
 
-    if (systemData.stamina.current > systemData.stamina.max || systemData.stamina.current < systemData.stamina.min)
+    if (systemData.stamina.current == null || systemData.stamina.current > systemData.stamina.max || systemData.stamina.current < systemData.stamina.min)
     {
       systemData.stamina.current = systemData.stamina.current > systemData.stamina.max ? systemData.stamina.max : systemData.stamina.min;
     }
