@@ -55,7 +55,7 @@
             {{#each system.mainStats as |stat key|}}
             <div class="ability flexrow flex-group-center">
               <label for="system.mainStats.{{key}}.total" class="resource-label rollable flexlarge align-left" data-roll="d20+@mainStats.{{key}}.total" data-label="{{key}}">{{key}}</label>
-              {{system.mainStats.@key.base}}, {{system.mainStats.@key.mods}}, {{system.mainStats.@key.total}}
+              {{system.mainStats.key.base}}, {{system.mainStats.key.mods}}, {{system.mainStats.key.total}}
             </div>
             {{/each}}
           </div>
